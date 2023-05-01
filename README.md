@@ -12,6 +12,8 @@ Google Shopping Scraper will enable you to extract product data from Google Shop
 
 -   Scrape merchant names and links - Merchant names, affiliation and product links will be available for you.
 
+- Retrieve all the compared prices from different websites and merchants!
+
 
 ## Why scrape Google Shopping?
 Google Shopping is a great source of data for basically any industry. From clothes to tech, it's a great place to extract data for market research and price monitoring.
@@ -32,8 +34,10 @@ The input of this scraper should be JSON containing the list of pages on Google 
 | Field                | Type    | Description                                                                                                                                                                                                    |
 | -------------------- | ------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | search               | String  | (optional) Keyword that you want to search on Google Shopping.                                                                                                                                                       |
+| includeComparisonPrices               | Boolean  | (optional) This option will enable the actor to retrieve all the possible prices from other merchants with comparison.                                                                                                                                                       |
 | startUrls            | Array   | (optional) List of Google Shopping URLs. You should only provide only search pages from Google Shopping.                                                                                                                 |
 | maxItems             | Integer | (optional) You can limit scraped products. This should be useful when you search through the big lists.                                                                                                |
+| maxItemsPerQuery             | Integer | (optional) You can limit scraped products per each query. This should be useful when you search through the big lists.                                                                                                |
 | proxy                | Object  | Proxy configuration                                                                                                                                                                                            |
 
 This solution requires the use of **Proxy servers**, either your own proxy servers or you can use [Apify Proxy](https://www.apify.com/docs/proxy).
@@ -49,7 +53,7 @@ The actor optimized to run blazing fast and scrape many as listings as possible.
 ## Tips for scraping Google Shopping
 Here's a tip for scraping Google Shopping. If you want to filter your search by product details (price range, color, model, etc), head over to the Google Shopping website in a separate browser window, type your keyboard into the search bar, and toggle with the filters. Once you are done, copy the web page's URL, and paste it into the scraper's input field!
 
-### XXXXX Scraper Input example
+### Google Shopping Scraper Input example
 
 ```json
 {
@@ -58,6 +62,7 @@ Here's a tip for scraping Google Shopping. If you want to filter your search by 
   ],
   "maxItems":80,
   "countryCode": "us",
+  "includeComparisonPrices":true
   "startUrls":[
     "https://www.google.com/search?q=android&source=lnms&tbm=shop&tbs=vw:l"
   ],
@@ -89,16 +94,18 @@ The structure of each item in Google Shopping looks like this:
 
 ```json
 {
-	"productName": "Apple iPhone 11 128 ГБ зеленый",
-	"productLink": "http://www.google.com/shopping/product/13471355041199662593?q=iPhone&prds=eto:15160220206529252306_0,pid:1853419364265332599,rsk:PC_8023149794696260886&sa=X&ved=0ahUKEwiYuf7SkMf8AhXdCBAIHV31C7cQ8gIIxAw",
-	"price": "RUB 30,970.00",
-	"description": "Smartphone · Dual SIM · 4G · Wireless Charging · Dual Lens · GSM Network · CDMA Network · iOS · Facial Recognition · 1792x828",
-	"merchantName": "iStoreApple",
-	"merchantLink": "http://www.google.com/url?url=https://istoreapple.ru/apple-iphone-11-128-gb-zelenij&rct=j&q=&esrc=s&sa=U&ved=0ahUKEwiYuf7SkMf8AhXdCBAIHV31C7cQguUECNMM&usg=AOvVaw1lIo3tGOvmhqIRKqoHxS3k",
-	"shoppingId": "13471355041199662593",
-	"reviewsScore": "4.6",
-	"reviewsCount": "45,423",
-	"positionOnSearchPage": 2,
-	"productDetails": "Версия ОС на начало продаж iOS 13 Конструкция водозащита Размеры (ШxВxТ) 75.7x150.9x8.3 мм Процессор Apple A13 Bionic Размер ..."
+	"productName": "Willow & Silk Colour Birds w/ Home 3 Bells Hanging",
+	"productLink": "http://www.google.com.au/shopping/product/13169701087423086284?q=06934BEL&gl=AU&prds=eto:57679750986077523_0,pid:11810335896967482237,rsk:PC_12136905723812258232&sa=X&ved=0ahUKEwj3sPzCitT-AhVORjABHQwaBvUQ8gIIYw",
+	"price": "$34.95",
+	"withoutDiscountPrice": "$49.95",
+	"description": "Outdoor · Metal · Iron",
+	"merchantName": "Temple & Webster",
+	"merchantLink": "http://www.google.com.au/url?q=https://www.templeandwebster.com.au/Birds-with-Home-Iron-Hanging-Bells-HSTR2931.html%3Frefid%3DGPAAU447-HSTR2931&sa=U&ved=0ahUKEwip1t3MitT-AhUKMVkFHTZzB_gQ2ykIRg&usg=AOvVaw05H6-jDtCPDYz-5EuPG8JN",
+	"shoppingId": "13169701087423086284",
+	"reviewsScore": "5.0",
+	"reviewsCount": "2",
+	"positionOnSearchPage": 1,
+	"productDetails": "Add some French country charm to your front porch, garden, patio or courtyard with Birds Home 3 Hanging Bells. Crafted from ...",
+	"totalPrice": "$45.90"
 }
 ```
