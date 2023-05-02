@@ -29,20 +29,25 @@ This scraper is under active development. If you have any feature requests you c
 
 ## Input Parameters
 
-The input of this scraper should be JSON containing the list of pages on Google Shopping Scraper that should be visited. Required fields are:
+The input of this scraper should be JSON containing the list of pages on Google Shopping Scraper that should be visited. Possible fields are:
 
-| Field                | Type    | Description                                                                                                                                                                                                    |
-| -------------------- | ------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| search               | String  | (optional) Keyword that you want to search on Google Shopping.                                                                                                                                                       |
-| includeComparisonPrices               | Boolean  | (optional) This option will enable the actor to retrieve all the possible prices from other merchants with comparison.                                                                                                                                                       |
-| startUrls            | Array   | (optional) List of Google Shopping URLs. You should only provide only search pages from Google Shopping.                                                                                                                 |
-| maxItems             | Integer | (optional) You can limit scraped products. This should be useful when you search through the big lists.                                                                                                |
-| maxItemsPerQuery             | Integer | (optional) You can limit scraped products per each query. This should be useful when you search through the big lists.                                                                                                |
-| proxy                | Object  | Proxy configuration                                                                                                                                                                                            |
+- `search`: (Optional) (String) Keyword that you want to search on Google Shopping.
+
+- `startUrls`: (Optional) (Array) List of Google Shopping URLs. You should only provide only search pages from Google Shopping.
+
+- `includeComparisonPrices`: (Optional) (Boolean) This option will enable the actor to retrieve all the possible prices from other merchants with comparison.
+
+- `includeReviews`: (Optional) (Boolean) This will add all the reviews that XXXXX provides into the detail objects. Please keep in mind that the time and resources the actor uses will increase proportionally by the number of reviews.
+
+- `maxItemsPerQuery`: (Optional) (Number) You can limit scraped products per each query. This should be useful when you search through the big lists.
+
+- `maxItems`: (Optional) (Number) You can limit scraped products. This should be useful when you search through the big lists or search results.
+
+- `proxy`: (Required) (Proxy Object) Proxy configuration.
 
 This solution requires the use of **Proxy servers**, either your own proxy servers or you can use [Apify Proxy](https://www.apify.com/docs/proxy).
 
-##### Tip
+### Tip
 
 When you want to have a scrape over a specific listing URL, just copy and paste the link as one of the **startUrl**.
 
