@@ -23,6 +23,12 @@ Here are just some of the ways you could use that data:
 - **Price Monitoring**: Find the perfect deal by regularly extracting prices. See how your competitors how pricing their products and create your own winning dynamic pricing strategy.
 - **Product Research**: If you're waiting for a product to be available again, scrape regularly to be the first to know as soon as you can purchase it, or get insights into what's on the market so you can develop your own products.
 
+## Need to find product pairs between Google and another online shop?
+
+Use the [AI Product Matcher](https://apify.com/equidem/ai-product-matcher?fpr=yhdrb)🔗. This AI model allows you to compare items from different web stores, identifying exact matches and comparing real-time data obtained via web scraping. 
+
+With the AI Product Matcher, you can use scraped product data to monitor product matches across the industry, implement dynamic pricing for your website, replace or complement manual mapping, and obtain realistic estimates against your competition for upcoming promo campaigns. Most importantly, it is relatively easy to get started with (just follow [this guide](https://blog.apify.com/product-matching-ai-pricing-intelligence-web-scraping/)) and is able to **match thousands of product pairs**.
+
 ## Bugs, fixes, updates and changelog
 
 This scraper is under active development. If you have any feature requests you can create an issue from [here](https://github.com/epctex/google-shopping-scraper/issues).
