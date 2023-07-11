@@ -1,3 +1,5 @@
+[https://apify.com/epctex/google-shopping-scraper](https://apify.com/epctex/google-shopping-scraper?fpr=yhdrb)
+
 # Actor - Google Shopping Scraper
 
 ## Google Shopping scraper
@@ -6,11 +8,11 @@ Google Shopping Scraper will enable you to extract product data from Google Shop
 
 -   Search any keyword - You can search for any keyword you would like to have and get the results.
 
--   Scrape reviews and rating - Scrape product reviews and rating without any limitation.
+-   Scrape reviews and rating - Scrape product reviews and ratings without any limitation.
 
 -   Scrape product detail - Get all the information that is available on Google Shopping.
 
--   Scrape merchant names and links - Merchant names, affiliation and product links will be available for you.
+-   Scrape merchant names and links - Merchant names, affiliation, and product links will be available for you.
 
 - Retrieve all the compared prices from different websites and merchants!
 
@@ -27,9 +29,9 @@ Here are just some of the ways you could use that data:
 
 Use the [AI Product Matcher](https://apify.com/equidem/ai-product-matcher?fpr=yhdrb)🔗. This AI model allows you to compare items from different web stores, identifying exact matches and comparing real-time data obtained via web scraping. 
 
-With the AI Product Matcher, you can use scraped product data to monitor product matches across the industry, implement dynamic pricing for your website, replace or complement manual mapping, and obtain realistic estimates against your competition for upcoming promo campaigns. Most importantly, it is relatively easy to get started with (just follow [this guide](https://blog.apify.com/product-matching-ai-pricing-intelligence-web-scraping/)) and is able to **match thousands of product pairs**.
+With the AI Product Matcher, you can use scraped product data to monitor product matches across the industry, implement dynamic pricing for your website, replace or complement manual mapping, and obtain realistic estimates against your competition for upcoming promo campaigns. Most importantly, it is relatively easy to get started with (just follow [this guide](https://blog.apify.com/product-matching-ai-pricing-intelligence-web-scraping/)) and can **match thousands of product pairs**.
 
-## Bugs, fixes, updates and changelog
+## Bugs, fixes, updates, and changelog
 
 This scraper is under active development. If you have any feature requests you can create an issue from [here](https://github.com/epctex/google-shopping-scraper/issues).
 
@@ -43,7 +45,7 @@ The input of this scraper should be JSON containing the list of pages on Google 
 
 - `includeComparisonPrices`: (Optional) (Boolean) This option will enable the actor to retrieve all the possible prices from other merchants with comparison.
 
-- `includeReviews`: (Optional) (Boolean) This will add all the reviews that XXXXX provides into the detail objects. Please keep in mind that the time and resources the actor uses will increase proportionally by the number of reviews.
+- `includeReviews`: (Optional) (Boolean) This will add all the reviews that Google Shopping provides into the detail objects. Please keep in mind that the time and resources the actor uses will increase proportionally by the number of reviews.
 
 - `maxItemsPerQuery`: (Optional) (Number) You can limit scraped products per each query. This should be useful when you search through the big lists.
 
@@ -55,11 +57,11 @@ This solution requires the use of **Proxy servers**, either your own proxy serve
 
 ### Tip
 
-When you want to have a scrape over a specific listing URL, just copy and paste the link as one of the **startUrl**.
+When you want to scrape over a specific listing URL, just copy and paste the link as one of the **startUrl**.
 
 ### Compute Unit Consumption
 
-The actor optimized to run blazing fast and scrape many as listings as possible. Therefore, it forefronts all listing detail requests. If actor doesn't block very often it'll scrape 100 listings in 2 minutes with ~0.05-0.1 compute units.
+The actor is optimized to run blazing fast and scrape many listings as possible. Therefore, it forefronts all listing detail requests. If the actor doesn't block very often it'll scrape 100 listings in 2 minutes with ~0.05-0.1 compute units.
 
 ## Tips for scraping Google Shopping
 Here's a tip for scraping Google Shopping. If you want to filter your search by product details (price range, color, model, etc), head over to the Google Shopping website in a separate browser window, type your keyboard into the search bar, and toggle with the filters. Once you are done, copy the web page's URL, and paste it into the scraper's input field!
@@ -91,13 +93,13 @@ Here's a tip for scraping Google Shopping. If you want to filter your search by 
 During the run, the actor will output messages letting you know what is going on. Each message always contains a short label specifying which page from the provided list is currently specified.
 When items are loaded from the page, you should see a message about this event with a loaded item count and total item count for each page.
 
-If you provide incorrect input to the actor, it will immediately stop with failure state and output an explanation of what is wrong.
+If you provide incorrect input to the actor, it will immediately stop with a failure state and output an explanation of what is wrong.
 
 ## Google Shopping Export
 
 During the run, the actor stores results into a dataset. Each item is a separate item in the dataset.
 
-You can manage the results in any languague (Python, PHP, Node JS/NPM). See the FAQ or <a href="https://www.apify.com/docs/api" target="blank">our API reference</a> to learn more about getting results from this Google Shopping actor.
+You can manage the results in any language (Python, PHP, Node JS/NPM). See the FAQ or <a href="https://www.apify.com/docs/api" target="blank">our API reference</a> to learn more about getting results from this Google Shopping actor.
 
 ## Scraped Google Shopping Properties
 
@@ -105,21 +107,21 @@ The structure of each item in Google Shopping looks like this:
 
 ```json
 {
-	"productName": "Willow & Silk Colour Birds w/ Home 3 Bells Hanging",
-	"productLink": "http://www.google.com.au/shopping/product/13169701087423086284?q=06934BEL&gl=AU&prds=eto:57679750986077523_0,pid:11810335896967482237,rsk:PC_12136905723812258232&sa=X&ved=0ahUKEwj3sPzCitT-AhVORjABHQwaBvUQ8gIIYw",
-	"price": "$34.95",
-	"withoutDiscountPrice": "$49.95",
-	"description": "Outdoor · Metal · Iron",
-	"merchantName": "Temple & Webster",
-	"merchantLink": "http://www.google.com.au/url?q=https://www.templeandwebster.com.au/Birds-with-Home-Iron-Hanging-Bells-HSTR2931.html%3Frefid%3DGPAAU447-HSTR2931&sa=U&ved=0ahUKEwip1t3MitT-AhUKMVkFHTZzB_gQ2ykIRg&usg=AOvVaw05H6-jDtCPDYz-5EuPG8JN",
-	"shoppingId": "13169701087423086284",
-	"reviewsScore": "5.0",
-	"reviewsCount": "2",
-	"positionOnSearchPage": 1,
-	"productDetails": "Add some French country charm to your front porch, garden, patio or courtyard with Birds Home 3 Hanging Bells. Crafted from ...",
-	"totalPrice": "$45.90"
+  "productName": "Willow & Silk Colour Birds w/ Home 3 Bells Hanging",
+  "productLink": "http://www.google.com.au/shopping/product/13169701087423086284?q=06934BEL&gl=AU&prds=eto:57679750986077523_0,pid:11810335896967482237,rsk:PC_12136905723812258232&sa=X&ved=0ahUKEwj3sPzCitT-AhVORjABHQwaBvUQ8gIIYw",
+  "price": "$34.95",
+  "withoutDiscountPrice": "$49.95",
+  "description": "Outdoor · Metal · Iron",
+  "merchantName": "Temple & Webster",
+  "merchantLink": "http://www.google.com.au/url?q=https://www.templeandwebster.com.au/Birds-with-Home-Iron-Hanging-Bells-HSTR2931.html%3Frefid%3DGPAAU447-HSTR2931&sa=U&ved=0ahUKEwip1t3MitT-AhUKMVkFHTZzB_gQ2ykIRg&usg=AOvVaw05H6-jDtCPDYz-5EuPG8JN",
+  "shoppingId": "13169701087423086284",
+  "reviewsScore": "5.0",
+  "reviewsCount": "2",
+  "positionOnSearchPage": 1,
+  "productDetails": "Add some French country charm to your front porch, garden, patio or courtyard with Birds Home 3 Hanging Bells. Crafted from ...",
+  "totalPrice": "$45.90"
 }
 ```
 
 ## Contact
-Please visit us through [epctex.com](https://epctex.com) to see all the products that is available for you. If you are looking for any custom integration or so, please reach out to us through the chat box in [epctex.com](https://epctex.com). In need of support? [devops@epctex.com](mailto:devops@epctex.com) is at your service.
+Please visit us through [epctex.com](https://epctex.com) to see all the products that are available for you. If you are looking for any custom integration or so, please reach out to us through the chat box in [epctex.com](https://epctex.com). In need of support? [devops@epctex.com](mailto:devops@epctex.com) is at your service.
